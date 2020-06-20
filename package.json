@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "dependencies": {
+    "@vue/component-compiler-utils": "3.1.2",
+    "@vuepress/shared-utils": "1.5.0",
+    "echarts": "^4.5.0",
+    "lru-cache": "5.1.1",
+    "markdown-it-emoji": "^1.4.0",
+    "toml": "3.0.0",
+    "vue": "^2.6.11",
+    "vue-echarts": "4.1.0",
+    "vuepress": "^1.5.0"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-active-header-links": "^1.5.2",
+    "@vuepress/plugin-back-to-top": "^1.5.2",
+    "@vuepress/plugin-search": "^1.5.0",
+    "vuepress-plugin-mermaidjs": "^1.5.1"
+  }
+}
