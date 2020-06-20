@@ -57,6 +57,7 @@ module.exports = {
                 collapsable: true,
                 children: [
                     { title: 'GoLang', path: '/develop/go/' },
+                    { title: 'go-astilectron', path: '/develop/go/go-astilectron.md' },
                 ]
             }, {
                 title: 'Vue',
@@ -72,6 +73,12 @@ module.exports = {
                 children: [
                     { title: 'Node', path: '/develop/node/' },
                     { title: 'electron', path: '/develop/node/electron.md' },
+                ]
+            },{
+                title: 'ThreeJS',
+                collapsable: true,
+                children: [
+                    { title: 'ThreeJS', path: '/develop/threejs/' },
                 ]
             }, {
                 title: '工具',
