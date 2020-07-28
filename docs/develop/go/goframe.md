@@ -147,6 +147,8 @@
 
 ## 使用Controller
 
+> 基于前面的工程
+
 1. 添加Controller
 
     在./app/api/welcome/welcome.go里定义一个空的结构体Controller作为API管理对象。  
@@ -226,6 +228,8 @@
 
 ## 使用Controller并调用Service
 
+> 基于前面的工程
+
 1. 新建Service用代码文件
 
     在./app/api/service目录下新建welcome目录，在welcome目录下新建welcome.go文件。  
@@ -296,4 +300,131 @@
     输出结果：
     ```json
     {"message":"Welcome to goframe!"}
+    ```
+
+## 访问数据库
+
+> 基于前面的工程
+
+1. 创建数据库
+
+MySQL
+```sql
+CREATE SCHEMA `db_xgo` DEFAULT CHARACTER SET utf8mb4 ;
+```
+
+2. 修改配置文件里的数据库连接
+
+```toml
+# Database.
+[database]
+    link  = "mysql:root:123456@tcp(127.0.0.1:3306)/db_xgo"
+    debug = true
+    # Database logger.
+    [database.logger]
+        Path   = "/tmp/log/gf-app/sql"
+        Level  = "all"
+        Stdout = true
+```
+
+3. 新建表
+
+    新建系统用户表 sys_user。
+
+```
+CREATE TABLE `db_xgo`.`sys_user` (
+  `id` INT NOT NULL,
+  `user_id` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NULL,
+  `user_name` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `user_id_UNIQUE` (`user_id` ASC));
+```
+
+4. 执行GoFrame的命令生成数据库表操作相关代码
+   
+    GoFrame命令官方文档：
+    https://goframe.org/toolchain/cli#
+
+    在Go程序根目录下启动命令行执行命令
+    ```
+    gf gen model ./app/model
+    ```
+
+    所有表的操作代码都会被生成。
+    上述命令的执行过程。
+
+    ```
+    E:\develop\github.com\bettersun\xgo\xgo>gf gen model ./app/model
+    path './app/model' is not empty, files might be overwrote, continue? [y/n]: y
+    2020-07-28 16:48:41.084 [DEBU] [  7 ms] SHOW TABLES
+    2020-07-28 16:48:41.157 [DEBU] [  2 ms] SHOW FULL COLUMNS FROM `sys_user`
+    generated: ./app/model\sys_user\sys_user.go
+    generated: ./app/model\sys_user\sys_user_entity.go
+    generated: ./app/model\sys_user\sys_user_model.go
+    done!
+    ```
+
+5. 添加表操作代码
+
+    在./app/service/welcome/welcome.go里添加函数，在函数里执行对表的查询。
+
+    ```
+    func WelecomeUser() string {
+
+        var message string
+        sysUser, err := sys_user.FindAll()
+
+        if err != nil {
+            fmt.Println(err)
+            message = "Error"
+            return message
+        }
+
+        if len(sysUser) > 0 {
+            message = "Welcome, " + sysUser[0].UserName + "."
+        } else {
+            message = "No user."
+        }
+
+        return message
+    }
+    ```
+
+6. 添加路由函数
+   
+    在./app/api/welcome/welcome.go里添加函数，在函数里调用Service里的函数。
+
+    ```
+    func (c *Controller) WelcomeUser(r *ghttp.Request) {
+
+        WelecomeUser := welcome.WelecomeUser()
+        r.Response.Writeln(WelecomeUser)
+    }
+    ```
+
+7. 运行服务访问URL
+   
+    访问 http://localhost:8199/welcome/welcome-user
+
+    输出结果：
+    ```
+    No user.
+    ```
+
+8. 在数据库表中添加数据
+
+    ```sql
+    INSERT INTO `db_xgo`.`sys_user` (`id`, `user_id`, `password`, `user_name`) VALUES ('1', 'bettersun', '123456', '此心光明');
+    ```
+
+    > 确保已提交。
+
+9. 再次访问URL
+    
+    访问 http://localhost:8199/welcome/welcome-user
+
+    输出结果：
+    ```
+    Welcome, 此心光明.
     ```
