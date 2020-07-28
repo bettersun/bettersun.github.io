@@ -57,6 +57,7 @@ module.exports = {
                 collapsable: true,
                 children: [
                     { title: 'GoLang', path: '/develop/go/' },
+                    { title: 'GoFrame', path: '/develop/go/goframe.md' },
                     { title: 'go-astilectron', path: '/develop/go/go-astilectron.md' },
                 ]
             }, {
