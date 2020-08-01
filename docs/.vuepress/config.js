@@ -46,6 +46,14 @@ module.exports = {
                         title: '战士',
                         path: '/innerpeace/warrior/'
                     },
+                    {
+                        title: '日记',
+                        collapsable: true,
+                        children: [
+                            { title: '日记', path: '/innerpeace/diary/' },
+                            { title: '20200801', path: '/innerpeace/diary/20200801.md' },
+                        ]
+                    },
                     
                 ]
             }],
@@ -76,6 +84,12 @@ module.exports = {
                     { title: 'electron', path: '/develop/node/electron.md' },
                 ]
             },{
+                title: 'MySQL',
+                collapsable: true,
+                children: [
+                    { title: 'MySQL', path: '/develop/mysql/' },
+                ]
+            }, {
                 title: 'ThreeJS',
                 collapsable: true,
                 children: [
