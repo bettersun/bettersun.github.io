@@ -15,11 +15,32 @@ module.exports = {
         }]
     ],
     themeConfig: {
-        lastUpdated: '最新提交时间',
+        lastUpdated: '最近更新时间',
         nav: [
             { text: '主页', link: '/' },
-            { text: '平和', link: '/innerpeace/' },
-            { text: '猿起', link: '/develop/' },
+            {
+                text: '内心的平和',
+                ariaLabel: '内心的平和菜单',
+                items: [
+                    { text: '战士', link: '/innerpeace/warrior/' },
+                    { text: '日记', link: '/innerpeace/diary/' },
+                ]
+            },
+
+            { text: '桜', link: '/innerpeace/sakura/' },
+            { text: 'GoLang', link: '/develop/go/' },
+            { text: 'Flutter', link: '/develop/flutter/' },
+            {
+                text: '猿起',
+                ariaLabel: '猿起菜单',
+                items: [
+                    { text: 'Vue', link: '/develop/vue/' },
+                    { text: 'Node', link: '/develop/node/' },
+                    { text: 'MySql', link: '/develop/mysql/' },
+                    { text: '工具', link: '/develop/tool/' },
+                    { text: 'Mac', link: '/develop/mac/' },
+                ]
+            },
             {
                 text: '关于',
                 ariaLabel: '关于菜单',
@@ -31,36 +52,32 @@ module.exports = {
                 ]
             },
         ],
-        sidebarDepth: 3,
+        sidebarDepth: 2,
         sidebar: {
-            '/innerpeace/': [{
-                title: '平和',
+            '/innerpeace/warrior/': [{
+                title: '战士',
                 collapsable: true,
                 children: [
-                    { title: 'OnePiece', path: '/innerpeace/onepiece/' },
-                    {
-                        title: '桜',
-                        path: '/innerpeace/sakura/'
-                    },
-                    {
-                        title: '战士',
-                        path: '/innerpeace/warrior/'
-                    },
-                    {
-                        title: '日记',
-                        collapsable: true,
-                        children: [
-                            { title: '日记', path: '/innerpeace/diary/' },
-                            { title: '20200801', path: '/innerpeace/diary/20200801.md' },
-                        ]
-                    },
-                    
+                    { title: '战士', path: '/innerpeace/warrior/' },
                 ]
             }],
-            '/develop/': [{
-                title: '猿起',
-                path: '/develop/'
-            }, {
+            '/innerpeace/diary/': [{
+                title: '日记',
+                collapsable: true,
+                children: [
+                    { title: '日记', path: '/innerpeace/diary/' },
+                    { title: '20200801', path: '/innerpeace/diary/20200801.md' },
+                ]
+            }],
+            '/innerpeace/sakura/': [{
+                title: '桜',
+                collapsable: true,
+                children: [
+                    { title: '桜', path: '/innerpeace/sakura/' },
+                    { title: 'OnePiece', path: '/innerpeace/sakura/onepiece/' },
+                ]
+            }],
+            '/develop/go/': [{
                 title: 'GoLang',
                 collapsable: true,
                 children: [
@@ -68,7 +85,15 @@ module.exports = {
                     { title: 'GoFrame', path: '/develop/go/goframe.md' },
                     { title: 'go-astilectron', path: '/develop/go/go-astilectron.md' },
                 ]
-            }, {
+            }],
+            '/develop/flutter/': [{
+                title: 'Flutter',
+                collapsable: true,
+                children: [
+                    { title: 'Flutter', path: '/develop/flutter/' },
+                ]
+            }],
+            '/develop/vue/': [{
                 title: 'Vue',
                 collapsable: true,
                 children: [
@@ -76,26 +101,30 @@ module.exports = {
                     { title: 'VuePress', path: '/develop/vue/vuepress.md' },
                     { title: 'VuePress问题', path: '/develop/vue/vuepressxp.md' },
                 ]
-            }, {
+            }],
+            '/develop/node/': [{
                 title: 'Node',
                 collapsable: true,
                 children: [
                     { title: 'Node', path: '/develop/node/' },
                     { title: 'electron', path: '/develop/node/electron.md' },
                 ]
-            },{
+            }],
+            '/develop/mysql/': [{
                 title: 'MySQL',
                 collapsable: true,
                 children: [
                     { title: 'MySQL', path: '/develop/mysql/' },
                 ]
-            }, {
+            }],
+            '/develop/threejs/': [{
                 title: 'ThreeJS',
                 collapsable: true,
                 children: [
                     { title: 'ThreeJS', path: '/develop/threejs/' },
                 ]
-            }, {
+            }],
+            '/develop/tool/': [{
                 title: '工具',
                 collapsable: true,
                 children: [
