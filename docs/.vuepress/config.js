@@ -37,6 +37,7 @@ module.exports = {
                     { text: 'Vue', link: '/develop/vue/' },
                     { text: 'Node', link: '/develop/node/' },
                     { text: 'MySql', link: '/develop/mysql/' },
+                    { text: 'ThreeJS', link: '/develop/threejs/' },
                     { text: '工具', link: '/develop/tool/' },
                     { text: 'Mac', link: '/develop/mac/' },
                 ]
@@ -92,6 +93,15 @@ module.exports = {
                 children: [
                     { title: 'Flutter', path: '/develop/flutter/' },
                 ]
+            },
+            {
+                title: 'go-flutter',
+                collapsable: true,
+                children: [
+                    { title: 'hello, go-flutter', path: '/develop/flutter/go-flutter/' },
+                    { title: '(1) 第一个桌面应用', path: '/develop/flutter/go-flutter/1_first_desktop_app.md' },
+                    { title: '(2) 编写go-flutter插件', path: '/develop/flutter/go-flutter/2_create_plugin.md' },
+                ]
             }],
             '/develop/vue/': [{
                 title: 'Vue',
@@ -111,10 +121,10 @@ module.exports = {
                 ]
             }],
             '/develop/mysql/': [{
-                title: 'MySQL',
+                title: 'MySql',
                 collapsable: true,
                 children: [
-                    { title: 'MySQL', path: '/develop/mysql/' },
+                    { title: 'MySql', path: '/develop/mysql/' },
                 ]
             }],
             '/develop/threejs/': [{
