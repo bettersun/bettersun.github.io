@@ -23,11 +23,9 @@ module.exports = {
                 ariaLabel: '内心的平和菜单',
                 items: [
                     { text: '战士', link: '/innerpeace/warrior/' },
-                    { text: '日记', link: '/innerpeace/diary/' },
+                    { text: '桜', link: '/innerpeace/sakura/' },
                 ]
             },
-
-            { text: '桜', link: '/innerpeace/sakura/' },
             { text: 'GoLang', link: '/develop/go/' },
             { text: 'Flutter', link: '/develop/flutter/' },
             {
@@ -40,6 +38,7 @@ module.exports = {
                     { text: 'ThreeJS', link: '/develop/threejs/' },
                     { text: '工具', link: '/develop/tool/' },
                     { text: 'Mac', link: '/develop/mac/' },
+                    { text: 'VBA', link: '/develop/vba/' },
                 ]
             },
             {
@@ -62,14 +61,6 @@ module.exports = {
                     { title: '战士', path: '/innerpeace/warrior/' },
                 ]
             }],
-            '/innerpeace/diary/': [{
-                title: '日记',
-                collapsable: true,
-                children: [
-                    { title: '日记', path: '/innerpeace/diary/' },
-                    { title: '20200801', path: '/innerpeace/diary/20200801.md' },
-                ]
-            }],
             '/innerpeace/sakura/': [{
                 title: '桜',
                 collapsable: true,
@@ -82,9 +73,10 @@ module.exports = {
                 title: 'GoLang',
                 collapsable: true,
                 children: [
-                    { title: 'GoLang', path: '/develop/go/' },
+                    { title: 'Go语言', path: '/develop/go/' },
                     { title: 'GoFrame', path: '/develop/go/goframe.md' },
                     { title: 'go-astilectron', path: '/develop/go/go-astilectron.md' },
+                    { title: 'Go语言代码片段', path: '/develop/go/go_code_snippets.md' },
                 ]
             }],
             '/develop/flutter/': [{
@@ -140,6 +132,17 @@ module.exports = {
                 children: [
                     { title: '工具', path: '/develop/tool/' },
                     { title: 'git', path: '/develop/git/' },
+                ]
+            }],
+            '/develop/vba/': [{
+                title: 'VBA',
+                collapsable: true,
+                children: [
+                    { title: '基础', path: '/develop/vba/basic/' },
+                    { title: '共通', path: '/develop/vba/common.md' },
+                    { title: 'Windows API', path: '/develop/vba/api.md' },
+                    { title: '文件操作', path: '/develop/vba/file.md' },
+                    { title: 'WScript.Shell', path: '/develop/vba/wscript.md' },
                 ]
             }],
             '/foo/': [{
