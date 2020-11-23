@@ -1,4 +1,4 @@
-# GoLang
+# Go语言
 
 ## go mod
 

@@ -26,12 +26,13 @@ module.exports = {
                     { text: '桜', link: '/innerpeace/sakura/' },
                 ]
             },
-            { text: 'GoLang', link: '/develop/go/' },
+            { text: 'Go语言', link: '/develop/go/' },
             { text: 'Flutter', link: '/develop/flutter/' },
             {
                 text: '猿起',
                 ariaLabel: '猿起菜单',
                 items: [
+                    { text: '猿起', link: '/develop/' },
                     { text: 'Vue', link: '/develop/vue/' },
                     { text: 'Node', link: '/develop/node/' },
                     { text: 'MySql', link: '/develop/mysql/' },
